@@ -1,0 +1,86 @@
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistema SIMC</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>SIMC</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Parallax -->
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    <!-- semantic UI -->
+    <link rel="stylesheet" type='text/css'
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+        integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"
+        integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<div class="content">
+    <div class="header" style="width: 100%; height: 30px; background-color: #001b5a;">
+        <img src="{% static 'img/phone.png' %}" style="color: white; margin-top: -5px; width: 20px; margin-left: 950px">
+        <span style="color: whitesmoke; margin-right: 60px;">(16) 0 0000-0000 </span>
+        <img src="{% static 'img/envelope.png' %}" style="color: whitesmoke; margin-top: 5px; width: 30px; ;">
+        <span style="color: white; margin-right: 10px;">E-mail@acif.com.br</span>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="{% static 'img/data.jpg' %}" style="width: 900px; height: 585px;">
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <div class="card auth-card"
+                    style="margin-bottom: 30px; border: none; margin-top: 60px; margin-left: -10px;">
+                    <div class="card-body">
+                        <img src="{% static 'img/logopreto.png' %}"
+                            style="width: 400px; height: 200px; margin-bottom: 20px;">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="next" value="{{ next }}">
+                            {{ form|crispy }}
+                            <div class="form-row" style="margin-top: -8px;">
+
+                                <a href="#" id="esqueceu"
+                                    style="text-decoration: none; color: black; text-align: right; margin-left: 280px;">Esqueceu
+                                    sua senha?</a>
+                            </div>
+                            <center><button type="submit" class="btn btn-primary btn-block"
+                                    style="background-color: #001b5a; border: #001b5a; width: 150px; border-radius: 10px; margin-top: 10px;">Entrar</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="width: 100%; height: 10px; background-color: #001b5a;"></div>
+
+</div>
+{% endblock %}
