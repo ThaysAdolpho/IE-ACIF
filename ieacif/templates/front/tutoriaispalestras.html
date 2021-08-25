@@ -8,9 +8,71 @@
 
 {% if user.is_authenticated %}
 
+<style>
+    .rotate90 {
+        transform: rotate(90deg);
+        width: 30px;
+        height: 60px;
+    }
+</style>
+
 <body>
     <div class="content">
-    </div>
+        <h5 style="margin-top: 30px; color: #585858; margin-left: 90px;">Escolha o que você
+            deseja ver:</h5>
+
+        <div class="col-md-12">
+            <div class="form-row" style="margin-top: -10px;">
+                <div class="col-md-9">
+                    <center><button type="button" class="btn btn-primary" style="width: 200px; height: 40px; background-color: #001b5a; 
+                            border: #001b5a; border-radius: 15px; font-size: large;">Tutoriais</button>
+                    </center>
+                </div>
+                <div class="col-md-1" style="margin-left: -300px;">
+                    <center>
+                        <button type="button" class="btn btn-primary" style="width: 200px; height: 40px; background-color: #ab1111; 
+                            border: #ab1111; border-radius: 15px; font-size: large;">Palestras</button>
+                    </center>
+                </div>
+            </div>
+
+            <div class="card" style="margin-left: 180px; margin-right: 180px; margin-top: 20px; padding-bottom: 30px;">
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/video.jpg' %}"
+                            style="width: 280px; height: 160px; margin-left: 30px; margin-top: 10px;">
+                    </div>
+                    <div class="col-md-7" style="margin-top: 40px;">
+                        <p style="font-size: larger; margin-left: 10px;">Este é o seu primeiro acesso? Clique no
+                            vídeo!</p>
+                        <img src="{% static 'img/azul.png' %}" class="rotate90"
+                            style="margin-left: 601px; margin-top: -30px;">
+                        <div class="col" style="margin-top: -15px;">
+                            <p> Neste vídeo você aprenderá as funcionalidades do sistema e sobre tudo aquilo que você
+                                tem
+                                acesso na nossa plataforma.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="solid">
+                <div class="form-row">
+                    <div class="col-md-4">
+                        <img src="{% static 'img/video.jpg' %}" style="width: 280px; height: 160px; margin-left: 30px;">
+                    </div>
+                    <div class="col-md-7" style="margin-top: 8px;">
+                        <p style="font-size: larger; margin-left: 10px;">Economista Adnan Jebailey convida
+                            especialista em mercado financeiro para explicar aumento do preço do café.</p>
+                            <img src="{% static 'img/verm.png' %}" class="rotate90"
+                            style="margin-left: 601px; margin-top: -40px;">
+                        <div class="col" style="margin-top: -10px;">
+                            <p> No dia 30 de fevereiro, Adnan Jebailey e Fulano de Tal discutem os motivos e
+                                implicações no aumento de preços nos últimos meses.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 </body>
 
