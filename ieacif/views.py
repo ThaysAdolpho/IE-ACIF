@@ -13,7 +13,12 @@ from .forms import *
 
 @login_required
 def home(request):
-    return render(request, 'front/home.html')
+    home = Home.objects.all()
+    return render(request, 'front/home.html', {'home': home})
+
+def homeView(request, id):
+    home = get_object_or_404(Home, pk=id)
+    return render(request, 'front/homez.html', {'home': home})
 
 @login_required
 def dados(request):
