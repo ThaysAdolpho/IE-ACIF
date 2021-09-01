@@ -22,7 +22,8 @@ def dados(request):
 
 @login_required
 def pesquisas(request):
-    return render(request, 'front/pesquisas.html')
+    pesquisas = Pesquisa.objects.all()
+    return render(request, 'front/pesquisas.html', {'pesquisas': pesquisas})
 
 @login_required
 def tutoriaispalestras(request):

@@ -3,7 +3,7 @@
 {% load static %}
 {% block title %}{% endblock %}
 
-{% block content %}
+
 
 <head>
     <meta charset="utf-8">
@@ -42,8 +42,8 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
-<div class="content">
+{% block content %}
+<div class="content" style="width: 100%;">
     <div class="header" style="width: 100%; height: 30px; background-color: #001b5a;">
         <img src="{% static 'img/phone.png' %}" style="color: white; margin-top: -5px; width: 20px; margin-left: 950px">
         <span style="color: whitesmoke; margin-right: 60px;">(16) 0 0000-0000 </span>
@@ -52,15 +52,15 @@
     </div>
     <div class="row">
         <div class="col-md-8">
-            <img src="{% static 'img/data.jpg' %}" style="width: 900px; height: 585px;">
+            <img src="{% static 'img/data.jpg' %}" style="width: 900px; height: 100%; position: relative;">
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <div class="card auth-card"
-                    style="margin-bottom: 30px; border: none; margin-top: 60px; margin-left: -10px;">
+                    style="border: none; margin-top: 50px; margin-left: -10px; margin-bottom: 60px;">
                     <div class="card-body">
                         <img src="{% static 'img/logopreto.png' %}"
-                            style="width: 400px; height: 200px; margin-bottom: 20px;">
+                            style="width: 400px; height: 200px; margin-bottom: 20px;position:relative;">
                         <form method="post">
                             {% csrf_token %}
                             <input type="hidden" name="next" value="{{ next }}">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="footer" style="width: 100%; height: 10px; background-color: #001b5a;"></div>
+    <div class="footer" style="width: 100%; height: 10px; background-color: #001b5a; position: relative;"></div>
 
 </div>
 {% endblock %}

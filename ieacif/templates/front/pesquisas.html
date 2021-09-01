@@ -83,8 +83,9 @@
                                     </div>
                                     <div class="col-md-6" style="margin-left: -10px;">
                                         <div class="card" style="border: none">
-                                            <span style="font-size: 18px; text-align: justify;">Dia dos Pais</span>
-                                            <p style="font-size: 14px; text-align: justify; margin-top: 10px;">Novos hábitos aumentam intenção de compra on-line do Dia dos Pais.</p>
+                                            {% for pesquisa in pesquisas %}
+                                            <span style="font-size: 18px; text-align: justify;">{{pesquisa.title}}</span>
+                                            <p style="font-size: 14px; text-align: justify; margin-top: 10px;">{{pesquisa.description}}</p>
                                         </div>
                                         <div class="card" style="border: none; margin-top: 90px;">
                                             <span style="font-size: 18px; text-align: justify;">Natal na cidade de Franca</span>
@@ -97,6 +98,7 @@
                                                 e o DNI-ACIF, pela primeira vez na série histórica do Ministério da
                                                 Economia, o calçado não foi o produto mais exportado pela cidade de
                                                 Franca.</span>
+                                                {% endfor %}
                                         </div>
 
                                     </div>
