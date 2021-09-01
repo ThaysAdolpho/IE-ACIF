@@ -50,13 +50,11 @@
                                     </div>
                                     <div class="col-md-6" style="margin-left: -10px;">
                                         <div class="card" style="border: none">
-                                           <span style="font-size: 18px; text-align: justify;">No "Dia do Comerciante"
-                                                ACIF
-                                                traça perfil do setor em Franca.</span>
-                                            <span style="font-size: 14px; text-align: justify;">Levantamento do
-                                                Instituto de
-                                                Economia da ACIF mostra ranking dos bairros
-                                                com maior número de empresas...</span>
+                                            {% for home in homes %}
+                                           <span style="font-size: 18px; text-align: justify;">{{home.title}}</span>
+                                            <span style="font-size: 14px; text-align: justify;">{{home.description}}</span>
+                                            <span style="font-size: 14px; text-align: justify;"></span>
+                                            {% endfor %}
                                         </div>
                                         <div class="card" style="border: none; margin-top: 40px;">
                                             <span style="font-size: 18px; text-align: justify;">IE-ACIF revela: Comércio
