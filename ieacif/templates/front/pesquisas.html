@@ -24,89 +24,28 @@
             <div class="card"
                 style="border-radius: 30px; margin-left: 30px; margin-right: 30px; width: 1200px; height: 350px; overflow-y: scroll;">
                 <div class="card-body">
-                    <div class="form-row">
-
-                        <!-- COLUNA ESQUERDA -->
-
+                    <div class="row">
+                        {% for pesquisa in pesquisas %}
                         <div class="col-md-6">
-                            <div class="card" style="border: none;">
-                                <div class="form-row">
-                                    <div class="col-md-6" style="margin-left: -20px;">
-                                        <img src="{% static 'img/comerciante.jpg' %}"
-                                            style="width: 235px; height: 135px; border-radius: 30px;">
-                                        <img src="{% static 'img/maes.jpg' %}"
-                                            style="width: 235px; height: 135px; border-radius: 30px; margin-top: 25px;">
-                                        <img src="{% static 'img/pai.jpg' %}"
-                                            style="width: 235px; height: 135px; border-radius: 30px; margin-top: 25px;">
-                                    </div>
-                                    <div class="col-md-6" style="margin-left: -10px;">
-                                        <div class="card" style="border: none">
-                                            <span style="font-size: 18px; text-align: justify;">No "Dia do Comerciante"
-                                                ACIF
-                                                traça perfil do setor em Franca.</span>
-                                            <span style="font-size: 14px; text-align: justify;">Levantamento do
-                                                Instituto de
-                                                Economia da ACIF mostra ranking dos bairros
-                                                com maior número de empresas...</span>
-                                        </div>
-                                        <div class="card" style="border: none; margin-top: 50px;">
-                                            <span style="font-size: 18px; text-align: justify;">Dia das Mães</span>
-                                            <p style="font-size: 14px; text-align: justify; margin-top: 10px;">Pesquisa pós Dia das Mães revela superação de expectativas nas compras.</p>
-                                        </div>
-                                        <div class="card" style="border: none; margin-top: 100px;">
-                                            <span style="font-size: 18px; text-align: justify;">No "Dia do Comerciante"
-                                                ACIF
-                                                traça perfil do setor em Franca.</span>
-                                            <span style="font-size: 14px; text-align: justify;">Levantamento do
-                                                Instituto de
-                                                Economia da ACIF mostra ranking dos bairros
-                                                com maior número de empresas...</span>
-                                        </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <img src="{% static 'img/mercado.jpg' %}"
+                                        style="width: 235px; height: 135px; border-radius: 30px; margin-top: 5px;">
 
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-title" style="text-align:left;">
+                                        {{pesquisa.title}}
+                                    </div>
+                                    <div class="card-body" style="text-align:justify">
+                                        {{pesquisa.description}}
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- COLUNA DIREITA -->
-
-                        <div class="col-md-6">
-                            <div class="card" style="border: none;">
-                                <div class="form-row">
-                                    <div class="col-md-6" style="margin-left: -20px;">
-                                        <img src="{% static 'img/pai.jpg' %}"
-                                            style="width: 235px; height: 135px; border-radius: 30px;">
-                                        <img src="{% static 'img/natal.jpg' %}"
-                                            style="width: 235px; height: 135px; border-radius: 30px; margin-top: 25px;">
-                                        <img src="{% static 'img/comerciante.jpg' %}"
-                                            style="width: 235px; height: 135px; border-radius: 30px; margin-top: 25px;">
-                                    </div>
-                                    <div class="col-md-6" style="margin-left: -10px;">
-                                        <div class="card" style="border: none">
-                                            {% for pesquisa in pesquisas %}
-                                            <span style="font-size: 18px; text-align: justify;">{{pesquisa.title}}</span>
-                                            <p style="font-size: 14px; text-align: justify; margin-top: 10px;">{{pesquisa.description}}</p>
-                                        </div>
-                                        <div class="card" style="border: none; margin-top: 90px;">
-                                            <span style="font-size: 18px; text-align: justify;">Natal na cidade de Franca</span>
-                                            <p style="font-size: 14px; text-align: justify; margin-top: 20px;">IE-ACIF revela que 67% dos francanos pretender ir às compras neste Natal.</p>
-                                        </div>
-                                        <div class="card" style="border: none; margin-top: 70px;">
-                                            <span style="font-size: 18px; text-align: justify;">Café ultrapassa calçados
-                                                em exportações.</span>
-                                            <span style="font-size: 14px; text-align: justify;">De acordo com o IE-ACIF
-                                                e o DNI-ACIF, pela primeira vez na série histórica do Ministério da
-                                                Economia, o calçado não foi o produto mais exportado pela cidade de
-                                                Franca.</span>
-                                                {% endfor %}
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                        {% endfor %}
+                    </div>
                     </div>
                 </div>
             </div>
