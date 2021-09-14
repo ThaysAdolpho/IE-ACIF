@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<body>
+    <div class="content">
+       
+        <h5 style="margin-left: 60px; margin-top: 30px; color: #585858; margin-bottom: 10px;">{{home.title}}</h5>
+      
+
+    </div>
+
+</body>
+
+
+{% endif %}
+{% endblock %}

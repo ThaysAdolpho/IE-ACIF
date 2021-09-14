@@ -17,6 +17,11 @@ def home(request):
     return render(request, 'front/home.html', {'homes': homes})
 
 @login_required
+def homeView(request, id):
+    home = get_object_or_404(Home, pk=id)
+    return render(request, 'front/homeview.html', {'home': home})
+
+@login_required
 def dados(request):
     return render(request, 'front/dados.html')
 
@@ -26,8 +31,19 @@ def pesquisas(request):
     return render(request, 'front/pesquisas.html', {'pesquisas': pesquisas})
 
 @login_required
+def pesquisaView(request, id):
+    pesquisa = get_object_or_404(Pesquisa, pk=id)
+    return render(request, 'front/pesquisa.html', {'pesquisa': pesquisa})
+
+@login_required
 def tutoriaispalestras(request):
-    return render(request, 'front/tutoriaispalestras.html')
+    tps = TutoriaisPalestras.objects.all()
+    return render(request, 'front/tutoriaispalestras.html', {'tps': tps})
+
+# @login_required
+# def tutoriaispalestrasView(request, id):
+#     tutoriaispalestras = get_object_or_404(TutoriaisPalestras, pk=id)
+#     return render(request, 'front/tutoriaispalestrasview.html', {'tutoriaispalestras': tutoriaispalestras})
 
 @login_required
 def boletins(request):
