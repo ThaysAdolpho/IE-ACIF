@@ -21,19 +21,19 @@ class Consumo(models.Model):
 class Consumidores(models.Model):
 
     Bairros = models.CharField(max_length=10000)
-    Mín = models.CharField(max_length=10000)
+    Min = models.CharField(max_length=10000)
     Max = models.CharField(max_length=10000)
-    Média = models.CharField(max_length=10000)
+    Media = models.CharField(max_length=10000)
     Moradores = models.CharField(max_length=10000)
-    Hab_Total = models.CharField(max_length=10000)
-    Renda_Média_por_Morador = models.CharField(max_length=10000)
-    Renda_Média_Familiar = models.CharField(max_length=10000)
+    HabitantesTotal = models.CharField(max_length=10000)
+    Renda_Media_por_Morador = models.CharField(max_length=10000)
+    Renda_Media_Familiar = models.CharField(max_length=10000)
 
 class Empresas(models.Model):
 
-    Razão_Social = models.CharField(max_length=10000)
+    Razao_Social = models.CharField(max_length=10000)
     CNPJ = models.CharField(max_length=10000)
-    Atividade_Econômica_CNAE = models.CharField(max_length=10000)
+    Atividade_Economica_CNAE = models.CharField(max_length=10000)
     Porte = models.CharField(max_length=10000)
     Endereço = models.CharField(max_length=10000)
 

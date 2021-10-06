@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Empresas{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="content">
+
+    <h5 style="margin-top: 30px; margin-left: 40px;"> Veja aqui os dados das Empresas:</h5>
+    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 420px; margin-top: 20px;">
+        <div class="card-body">
+            <table class="table table-striped" style="margin-top: -19px;">
+                <thead>
+                    <tr>
+                        <th scope="col">Razão Social</th>
+                        <th scope="col">CNPJ</th>
+                        <th scope="col">Atividade Econômica CNAE</th>
+                        <th scope="col">Porte</th>
+                        <th scope="col">Endereço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for empresas in empresa %}
+                    <tr>
+                        <td>{{empresa.Razao_Social}}</td>
+                        <td>{{empresas.CNPJ}}</td>
+                        <td>{{empresas.Atividade_Economica_CNAE}}</td>
+                        <td>{{empresas.Porte}}</td>
+                        <td>{{empresas.Endereço}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            <div class="pagination" style="margin-left: 500px; margin-top: -10px; position:static;">
+                <span class="step-links">
+                    {% if empresa.has_previous %}
+                    <a href="?page={{ empresa.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+                    {% endif %}
+
+                    <span class="current">
+                        {{ empresa.number }} de {{ empresa.paginator.num_pages }}
+                    </span>
+
+                    {% if empresa.has_next %}
+                    <a href="?page={{ empresa.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endif %}
+
+{% endblock %}

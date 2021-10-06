@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Bairro{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<div class="content">
+
+    <h5 style="margin-top: 30px; margin-left: 40px;"> Veja aqui os dados dos Bairros:</h5>
+    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 420px; margin-top: 20px;">
+        <div class="card-body">
+            <table class="table table-striped" style="margin-top: -19px;">
+                <thead>
+                    <tr>
+                        <th scope="col">Bairros</th>
+                        <th scope="col">Min</th>
+                        <th scope="col">Max</th>
+                        <th scope="col">Média</th>
+                        <th scope="col">Moradores</th>
+                        <th scope="col">Habitantes Total</th>
+                        <th scope="col">Renda Média por Morador</th>
+                        <th scope="col">Renda Média Familiar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for bairros in bairro %}
+                    <tr>
+                        <td>{{bairros.Bairros}}</td>
+                        <td>{{bairros.Min}}</td>
+                        <td>{{bairros.Max}}</td>
+                        <td>{{bairros.Media}}</td>
+                        <td>{{bairros.Moradores}}</td>
+                        <td>{{bairros.HabitantesTotal}}</td>
+                        <td>{{bairros.Renda_Media_por_Morador}}</td>
+                        <td>{{bairros.Renda_Media_Familiar}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            <div class="pagination" style="margin-left: 500px; margin-top: -10px; position:static;">
+                <span class="step-links">
+                    {% if bairro.has_previous %}
+                    <a href="?page={{ bairro.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+                    {% endif %}
+
+                    <span class="current">
+                        {{ bairro.number }} de {{ bairro.paginator.num_pages }}
+                    </span>
+
+                    {% if bairro.has_next %}
+                    <a href="?page={{ bairro.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endif %}
+
+{% endblock %}

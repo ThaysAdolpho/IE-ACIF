@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %}Página Inicial{% endblock %}
+{% block title %}Dados{% endblock %}
 
 {% block content %}
 
@@ -25,8 +25,8 @@
                 </div>
                 <div class="col-md-1" style="margin-left: -300px;">
                     <center>
-                        <button type="button" class="btn btn-primary"
-                            style="width: 200px; height: 40px; background-color: #001b5a; border: #001b5a; border-radius: 15px; font-size: large;">Empresas</button>
+                        <a href="{% url 'empresa' %}"><button type="button" class="btn btn-primary"
+                            style="width: 200px; height: 40px; background-color: #001b5a; border: #001b5a; border-radius: 15px; font-size: large;">Empresas</button></a>
                     </center>
                 </div>
             </div>
@@ -38,23 +38,21 @@
                 <div class="form-row">
 
                     <div class="col" style="margin-left: 290px;">
-                        <button class="btn btn-primary" type="button" data-toggle="collapse"
-                            data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"
+                        <a href="{% url 'bairro' %}"><button class="btn btn-primary" type="button"
                             style="width: 200px; height: 40px; background-color: #001b5a; border: #001b5a; border-radius: 15px; font-size: large;">Bairros
-                        </button>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                        </button></a>
+                        <a href="{% url 'consumo' %}"><button class="btn btn-primary" type="button" data-toggle="collapse"
                             data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample2"
-                            style="width: 200px; height: 40px; background-color: #001b5a; border: #001b5a; border-radius: 15px; font-size: large;">Consumo
-                        </button>
+                            style="width: 200px; height: 40px; background-color: #001b5a; 
+                            border: #001b5a; border-radius: 15px; font-size: large;">Consumo
+                        </button></a>
                     </div>
 
                 </div>
             </div>
         </div>
         <div class="collapse" id="collapseExample1">
-            <div class="card card-body" style="margin-left: 80px; margin-right: 80px; height: 300px;">
-
-            </div>
+           
         </div>
         <div class="collapse" id="collapseExample2">
             <div class="card card-body" style="margin-left: 80px; margin-right: 80px; height: 300px;">

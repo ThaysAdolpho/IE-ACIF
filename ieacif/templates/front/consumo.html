@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}Consumo{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+<div class="content">
+
+    <h5 style="margin-top: 30px; margin-left: 40px;"> Veja aqui os dados de Consumo:</h5>
+    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 420px; margin-top: 20px;">
+        <div class="card-body">
+            <table class="table table-striped" style="margin-top: -19px;">
+                <thead>
+                    <tr>
+                        <th scope="col">Classe</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for consumos in consumo %}
+                    <tr>
+                        <td>{{consumos.Classe}}</td>
+                        <td>{{consumos.Tipo}}</td>
+                        <td>{{consumos.Valor}}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            <div class="pagination" style="margin-left: 500px; margin-top: -10px; position:static;">
+                <span class="step-links">
+                    {% if consumos.has_previous %}
+                    <a href="?page={{ consumos.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+                    {% endif %}
+
+                    <span class="current">
+                        {{ consumos.number }} de {{ consumos.paginator.num_pages }}
+                    </span>
+
+                    {% if consumos.has_next %}
+                    <a href="?page={{ consumos.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+{% endif %}
+
+{% endblock %}
