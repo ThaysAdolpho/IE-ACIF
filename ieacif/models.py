@@ -14,9 +14,9 @@ class Home(models.Model):
 
 class Consumo(models.Model):
 
-    Tipo = models.CharField(max_length=10000)
-    Classe = models.CharField(max_length=10000)
-    Valor = models.CharField(max_length=10000)
+    TIPO = models.CharField(max_length=10000)
+    CLASSE = models.CharField(max_length=10000)
+    VALOR = models.CharField(max_length=10000)
 
 class Consumidores(models.Model):
 
@@ -26,16 +26,16 @@ class Consumidores(models.Model):
     Media = models.CharField(max_length=10000)
     Moradores = models.CharField(max_length=10000)
     HabitantesTotal = models.CharField(max_length=10000)
-    Renda_Media_por_Morador = models.CharField(max_length=10000)
-    Renda_Media_Familiar = models.CharField(max_length=10000)
+    RendaMediapormorador = models.CharField(max_length=10000)
+    RendaMediaFamiliar = models.CharField(max_length=10000)
 
 class Empresas(models.Model):
 
-    Razao_Social = models.CharField(max_length=10000)
+    Razao = models.CharField(max_length=10000)
     CNPJ = models.CharField(max_length=10000)
-    Atividade_Economica_CNAE = models.CharField(max_length=10000)
-    Porte = models.CharField(max_length=10000)
-    Endereço = models.CharField(max_length=10000)
+    ATIVIDADE = models.CharField(max_length=10000)
+    PORTE = models.CharField(max_length=10000)
+    Endereco = models.CharField(max_length=10000)
 
 class Pesquisa(models.Model):
     title = models.CharField(max_length=255)

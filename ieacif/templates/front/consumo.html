@@ -12,45 +12,45 @@
 <div class="content">
 
     <h5 style="margin-top: 30px; margin-left: 40px;"> Veja aqui os dados de Consumo:</h5>
-    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 420px; margin-top: 20px;">
+    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 380px; margin-top: 20px;">
         <div class="card-body">
-            <table class="table table-striped" style="margin-top: -19px;">
+            <table class="table table-striped" style="margin-top: -19px; height: 385px;">
                 <thead>
                     <tr>
-                        <th scope="col">Classe</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Valor</th>
+                        <th scope="col"style="text-align: center;">Tipo</th>
+                        <th scope="col"style="text-align: center;">Classe</th>
+                        <th scope="col"style="text-align: center;">Valor</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for consumos in consumo %}
                     <tr>
-                        <td>{{consumos.Classe}}</td>
-                        <td>{{consumos.Tipo}}</td>
-                        <td>{{consumos.Valor}}</td>
+                        <td style="text-align: center; width: 200px;">{{consumos.TIPO}}</td>
+                        <td style="text-align: center; width: 200px;">{{consumos.CLASSE}}</td>
+                        <td style="text-align: center; width: 200px;">{{consumos.VALOR}}</td>
                     </tr>
                     {% endfor %}
 
                 </tbody>
             </table>
-            <div class="pagination" style="margin-left: 500px; margin-top: -10px; position:static;">
-                <span class="step-links">
-                    {% if consumos.has_previous %}
-                    <a href="?page={{ consumos.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
-                    {% endif %}
-
-                    <span class="current">
-                        {{ consumos.number }} de {{ consumos.paginator.num_pages }}
-                    </span>
-
-                    {% if consumos.has_next %}
-                    <a href="?page={{ consumos.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
-                    {% endif %}
-                </span>
-            </div>
+           
         </div>
     </div>
+    <div class="pagination" style="margin-left: 600px; margin-top: 30px;">
+        <span class="step-links">
+            {% if consumo.has_previous %}
+            <a href="?page={{ consumo.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+            {% endif %}
 
+            <span class="current">
+                {{ consumo.number }} de {{ consumo.paginator.num_pages }}
+            </span>
+
+            {% if consumo.has_next %}
+            <a href="?page={{ consumo.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+            {% endif %}
+        </span>
+    </div>
 
 </div>
 

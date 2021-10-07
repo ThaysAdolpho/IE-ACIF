@@ -11,38 +11,38 @@
 <div class="content">
 
     <h5 style="margin-top: 30px; margin-left: 40px;"> Veja aqui os dados dos Bairros:</h5>
-    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 420px; margin-top: 20px;">
+    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 390px; margin-top: 20px;">
         <div class="card-body">
-            <table class="table table-striped" style="margin-top: -19px;">
+            <table class="table table-striped" style="margin-top: -19px; height: 390px;">
                 <thead>
                     <tr>
-                        <th scope="col">Bairros</th>
-                        <th scope="col">Min</th>
-                        <th scope="col">Max</th>
-                        <th scope="col">Média</th>
-                        <th scope="col">Moradores</th>
-                        <th scope="col">Habitantes Total</th>
-                        <th scope="col">Renda Média por Morador</th>
-                        <th scope="col">Renda Média Familiar</th>
+                        <th scope="col" style="text-align: center;">Bairros</th>
+                        <th scope="col"style="text-align: center;">Min</th>
+                        <th scope="col"style="text-align: center;">Max</th>
+                        <th scope="col"style="text-align: center;">Média</th>
+                        <th scope="col"style="text-align: center;">Moradores</th>
+                        <th scope="col"style="text-align: center;">Habitantes Total</th>
+                        <th scope="col"style="text-align: center;">Renda Média por Morador</th>
+                        <th scope="col"style="text-align: center;">Renda Média Familiar</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for bairros in bairro %}
                     <tr>
-                        <td>{{bairros.Bairros}}</td>
-                        <td>{{bairros.Min}}</td>
-                        <td>{{bairros.Max}}</td>
-                        <td>{{bairros.Media}}</td>
-                        <td>{{bairros.Moradores}}</td>
-                        <td>{{bairros.HabitantesTotal}}</td>
-                        <td>{{bairros.Renda_Media_por_Morador}}</td>
-                        <td>{{bairros.Renda_Media_Familiar}}</td>
+                        <td style="width: 210px;">{{bairros.Bairros}}</td>
+                        <td style="text-align: center;">{{bairros.Min}}</td>
+                        <td style="text-align: center;">{{bairros.Max}}</td>
+                        <td style="text-align: center;">{{bairros.Media}}</td>
+                        <td style="text-align: center;">{{bairros.Moradores}}</td>
+                        <td style="text-align: center;">{{bairros.HabitantesTotal}}</td>
+                        <td style="text-align: center;">{{bairros.RendaMediapormorador}}</td>
+                        <td style="text-align: center;">{{bairros.RendaMediaFamiliar}}</td>
                     </tr>
                     {% endfor %}
 
                 </tbody>
             </table>
-            <div class="pagination" style="margin-left: 500px; margin-top: -10px; position:static;">
+            <div class="pagination" style="margin-left: 500px; margin-top: 10px; position:static;">
                 <span class="step-links">
                     {% if bairro.has_previous %}
                     <a href="?page={{ bairro.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>

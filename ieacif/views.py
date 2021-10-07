@@ -52,7 +52,7 @@ def bairro(request):
 def consumo(request):
     consumo_list = Consumo.objects.all()
     
-    paginator = Paginator(consumo_list, 8)
+    paginator = Paginator(consumo_list, 6)
 
     page = request.GET.get('page')
 
@@ -65,7 +65,7 @@ def consumo(request):
 def empresa(request):
     empresa_list = Empresas.objects.all()
     
-    paginator = Paginator(empresa_list, 8)
+    paginator = Paginator(empresa_list, 5)
 
     page = request.GET.get('page')
 
