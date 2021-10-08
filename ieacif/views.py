@@ -14,7 +14,14 @@ from .forms import *
 
 @login_required
 def home(request):
-    homes = Home.objects.all()
+    homes_list = Home.objects.all() 
+    
+    paginator = Paginator(homes_list, 4)
+
+    page = request.GET.get('page')
+
+    homes = paginator.get_page(page)
+
     return render(request, 'front/home.html', {'homes': homes})
 
 @login_required
@@ -76,7 +83,14 @@ def empresa(request):
 
 @login_required
 def pesquisas(request):
-    pesquisas = Pesquisa.objects.all()
+    pesquisas_list = Pesquisa.objects.all()
+    
+    paginator = Paginator(pesquisas_list, 4)
+
+    page = request.GET.get('page')
+
+    pesquisas = paginator.get_page(page)
+
     return render(request, 'front/pesquisas.html', {'pesquisas': pesquisas})
 
 @login_required

@@ -59,12 +59,12 @@
 </style>
 
 <body>
-    <div class="content" style="width: 100%;">
-        <div class="header" style="width: 100%; height: 30px; background-color: #001b5a;">
+    <div class="content" style="width: 100%; position: static;">
+        <div class="header" style="width: 100%; height: 25px; background-color: #001b5a;">
             <img src="{% static 'img/phone.png' %}"
-                style="color: white; margin-top: -5px; width: 20px; margin-left: 950px">
+                style="color: white; margin-top: -7px; width: 20px; margin-left: 950px">
             <span style="color: whitesmoke; margin-right: 60px;">(16) 0 0000-0000 </span>
-            <img src="{% static 'img/envelope.png' %}" style="color: whitesmoke; margin-top: 5px; width: 30px; ;">
+            <img src="{% static 'img/envelope.png' %}" style="color: whitesmoke; margin-top: 5px; width: 30px;">
             <span style="color: white; margin-right: 10px;">E-mail@acif.com.br</span>
         </div>
 
@@ -82,36 +82,29 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}" style="margin-left: 60px; font-size: large;">Home
+                        <a class="nav-link" href="{% url 'home' %}" style="margin-left: 120px; font-size: large;">Home
                             <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'dados' %}" style="margin-left: 60px; font-size: large;">Dados
+                        <a class="nav-link" href="{% url 'dados' %}" style="margin-left: 75px; font-size: large;">Dados
                             <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'pesquisas' %}"
-                            style="margin-left: 60px; font-size: large;">Pesquisas <span class="sr-only"></span></a>
+                            style="margin-left: 75px; font-size: large;">Pesquisas <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'boletins' %}"
-                            style="margin-left: 60px; font-size: large;">Boletins <span class="sr-only"></span></a>
+                            style="margin-left: 75px; font-size: large;">Boletins <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'tutoriaispalestras' %}"
-                            style="margin-left: 60px; font-size: large;">Tutoriais e Palestras
+                            style="margin-left: 75px; font-size: large;">Tutoriais e Palestras
                             <span class="sr-only"></span></a>
                     </li>
                     <li>
-
-                        <div class="col search-div" style="margin-left: 40px;">
-                            <form method="GET" id="searchform">
-                                <input class="form-control" type="text" id="search" name="search"
-                                    placeholder="Buscar..." style="margin-top: 5px;">
-                            </form>
-                        </div>
                     </li>
-                    <li class="nav-item dropdown" style="margin-left: 60px;">
+                    <li class="nav-item dropdown" style="margin-left: 200px;">
                         <a class="nav-link dropdown" href="#" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             style="font-size: medium;">

@@ -11,59 +11,70 @@
 <body>
     <div class="content">
         <center>
-            <div class="card" style="border:none; margin-top: 10px;">
+            <div class="card" style="border:none; margin-top: -5px;">
                 <div class="card-body">
                     <span style="font-size: 20px;"> PESQUISAS</span>
-                    <hr class="rounded" style="width: 300px; color: #001b5a;">
+                    <hr class="rounded" style="width: 300px; color: #001b5a;margin-top: -2px;">
                 </div>
             </div>
         </center>
-        <h5 style="margin-left: 50px; margin-top: 10px; color: #585858; margin-bottom: 10px;">Veja aqui pesquisas já realizadas pelo
+        <h5 style="margin-left: 50px; margin-top: -5px; color: #585858; margin-bottom: 10px;">Veja aqui pesquisas já
+            realizadas pelo
             Instituto de Economia:</h5>
         <center>
             <div class="card"
-                style="border-radius: 30px; margin-left: 30px; margin-right: 30px; width: 1200px; height: 350px; overflow-y: scroll;">
+                style="border-radius: 30px; margin-left: 30px; margin-right: 30px; width: 1200px; height: 420px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)">
                 <div class="card-body">
                     <div class="row">
                         {% for pesquisa in pesquisas %}
                         <div class="col-md-6">
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <img src="{% static 'img/mercado.jpg' %}"
-                                        style="width: 235px; height: 135px; border-radius: 30px; margin-top: 5px;">
+                                    <a href="/pesquisa/{{pesquisa.id}}">
+                                        <img src="{% static 'img/mercado.jpg' %}"
+                                            style="width: 255px; height: 155px; border-radius: 30px; margin-top: 5px;">
+                                    </a>
+                                </div>
 
-                                </div>
                                 <div class="col-md-6">
-                                    <div class="card-title" style="text-align:left;">
-                                        <span><a href="/pesquisa/{{pesquisa.id}}">{{pesquisa.title}}</a></span>
-                                    </div>
-                                    <div class="card-body" style="text-align:justify">
-                                        <span>{{pesquisa.description}}</span>
-                                    </div>
+                                    <a href="/pesquisa/{{pesquisa.id}}">
+                                        <div class="card-title" style="text-align:center;">
+                                            <span
+                                                style="font-size: large; color:#585858; text-decoration: none;">{{pesquisa.title}}</span>
+                                    </a>
                                 </div>
+                                <div class="card-body"
+                                    style="text-align:justify; margin-left: -25px; margin-top: -25px; font-size: small;">
+                                    <span>{{pesquisa.previa}}</span>
+                                </div>
+                                </a>
                             </div>
                         </div>
-
-                        {% endfor %}
                     </div>
+
+                    {% endfor %}
+                </div>
+                <div class="footer">
+                    <div class="pagination" style="margin-left: 550px; margin-bottom: 10px;">
+                        <span class="step-links">
+                            {% if pesquisas.has_previous %}
+                            <a href="?page={{ pesquisas.previous_page_number }}"><i class="fas fa-arrow-left"style="color: #001b5a;"></i></a>
+                            {% endif %}
+
+                            <span class="current" style="margin-left: 5px; margin-right: 5px;">
+                                {{ pesquisas.number }} de {{ pesquisas.paginator.num_pages }}
+                            </span>
+
+                            {% if pesquisas.has_next %}
+                            <a href="?page={{ pesquisas.next_page_number }}"><i class="fas fa-arrow-right"style="color: #001b5a;"></i></a>
+                            {% endif %}
+                        </span>
                     </div>
                 </div>
+
             </div>
-        </center>
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
+    </center>
 
 </body>
 

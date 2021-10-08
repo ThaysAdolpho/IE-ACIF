@@ -4,7 +4,8 @@ from django.db import models
 class Home(models.Model):
 
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    previa = models.CharField(max_length=1000)
+    description = models.TextField(max_length=10000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
@@ -39,7 +40,8 @@ class Empresas(models.Model):
 
 class Pesquisa(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(max_length=1000)
+    previa = models.CharField(max_length=1000)
+    description = models.TextField(max_length=10000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

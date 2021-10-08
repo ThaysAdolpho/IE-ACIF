@@ -11,17 +11,17 @@
 <body>
     <div class="content">
         <center>
-            <div class="card" style="border-radius: 30px; width: 550px; margin-top: 15px; height: 100px;">
+            <div class="card" style="border-radius: 30px; width: 550px; margin-top: 8px; height: 80px;">
                 <div class="card-body">
                     <div class="form-row">
-                        <div class="col-md-9" style="margin-top: 0px;">
+                        <div class="col-md-9" style="margin-top: -8px;">
                             <span style="font-size: 20px;"> Seja bem vindo, associado!</span><span
-                                style="font-size: 18px; margin-top: 10px; color:#585858;"> Se este é o seu
+                                style="font-size: 18px; color:#585858;"> Se este é o seu
                                 primeiro acesso, veja o nosso vídeo explicativo.</span>
                         </div>
                         <div class="col-md-2" style="margin-left: 10px;">
                             <a href="{% url 'tutoriaispalestras' %}"><img src="{% static 'img/play-button.png' %}"
-                                    style="width: 70px; height: 70px; margin-left: 20px; margin-top: -7px;"></a>
+                                    style="width: 65px; height: 65px; margin-left: 20px; margin-top: -12px;"></a>
                         </div>
                     </div>
 
@@ -32,34 +32,56 @@
             francana:</h5>
         <center>
             <div class="card"
-                style="border-radius: 30px; margin-left: 30px; margin-right: 30px; width: 1200px; height: 350px; overflow-y: scroll;">
+                style="border-radius: 30px; margin-left: 30px; margin-right: 30px; width: 1200px; height: 390px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)"">
                 <div class="card-body">
                     <div class="row">
                         {% for home in homes %}
                         <div class="col-md-6">
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <a href="/home/{{home.id}}"><img src="{% static 'img/mercado.jpg' %}"
-                                            style="width: 235px; height: 135px; border-radius: 30px; margin-top: 5px;">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-title" style="text-align:left;">
-                                        <span>{{home.title}}</span>
-                                    </div>
-                                    <div class="card-body" style="text-align:justify">
-                                        {{home.description}}
-                                    </div>
+                                    <a href="/home/{{home.id}}">
+                                        <img src="{% static 'img/mercado.jpg' %}"
+                                            style="width: 255px; height: 155px; border-radius: 30px; margin-top: 5px;">
                                     </a>
                                 </div>
+                                
+                                <div class="col-md-6">
+                                    <a href="/home/{{home.id}}">
+                                        <div class="card-title" style="text-align:center;">
+                                            <span
+                                                style="font-size: large; color:#585858; text-decoration: none;">{{home.title}}</span>
+                                    </a>
+                                </div>
+                                <div class="card-body"
+                                    style="text-align:justify; margin-left: -25px; margin-top: -25px; font-size: small;">
+                                    <span>{{home.previa}}</span>
+                                </div>
+                                </a>
                             </div>
                         </div>
-
-                        {% endfor %}
                     </div>
 
-
+                    {% endfor %}
+                </div>
+                <div class="footer" style="margin-bottom: 10px;">
+                    <div class="pagination" style="margin-left: 530px; margin-top: 10px; position:static;">
+                        <span class="step-links">
+                            {% if homes.has_previous %}
+                            <a href="?page={{ homes.previous_page_number }}"><i class="fas fa-arrow-left"style="color: #001b5a;"></i></a>
+                            {% endif %}
+        
+                            <span class="current"style="margin-left: 5px; margin-right: 5px;">
+                                {{ homes.number }} de {{ homes.paginator.num_pages }}
+                            </span>
+        
+                            {% if homes.has_next %}
+                            <a href="?page={{ homes.next_page_number }}"><i class="fas fa-arrow-right"style="color: #001b5a; "></i></a>
+                            {% endif %}
+                        </span>
+                    </div>
                 </div>
             </div>
+            
     </div>
 
 

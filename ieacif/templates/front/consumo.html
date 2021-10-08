@@ -12,7 +12,7 @@
 <div class="content">
 
     <h5 style="margin-top: 30px; margin-left: 40px;"> Veja aqui os dados de Consumo:</h5>
-    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 380px; margin-top: 20px;">
+    <div class="card" style="margin-left: 80px; margin-right: 80px; height: 420px; margin-top: 20px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)">
         <div class="card-body">
             <table class="table table-striped" style="margin-top: -19px; height: 385px;">
                 <thead>
@@ -35,22 +35,25 @@
             </table>
            
         </div>
+        <div class="footer">
+            <div class="pagination" style="margin-left: 550px; margin-bottom: 10px;">
+                <span class="step-links">
+                    {% if consumo.has_previous %}
+                    <a href="?page={{ consumo.previous_page_number }}"><i class="fas fa-arrow-left"style="color: #001b5a;"></i></a>
+                    {% endif %}
+        
+                    <span class="current" style="margin-left: 5px; margin-right: 5px;">
+                        {{ consumo.number }} de {{ consumo.paginator.num_pages }}
+                    </span>
+        
+                    {% if consumo.has_next %}
+                    <a href="?page={{ consumo.next_page_number }}"><i class="fas fa-arrow-right"style="color: #001b5a;"></i></a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
     </div>
-    <div class="pagination" style="margin-left: 600px; margin-top: 30px;">
-        <span class="step-links">
-            {% if consumo.has_previous %}
-            <a href="?page={{ consumo.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
-            {% endif %}
-
-            <span class="current">
-                {{ consumo.number }} de {{ consumo.paginator.num_pages }}
-            </span>
-
-            {% if consumo.has_next %}
-            <a href="?page={{ consumo.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
-            {% endif %}
-        </span>
-    </div>
+    
 
 </div>
 
