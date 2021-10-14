@@ -80,21 +80,31 @@ WSGI_APPLICATION = 'sistemieacif.wsgi.application'
 
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
+#         'ENGINE': 'mysql.connector.django',
+#         'NAME': 'IEACIF',
+#         'USER': 'ieacif',
 #         'PASSWORD': 'acif2021',
-#         'HOST': 'database-1.chq14hmnk9qa.us-east-2.rds.amazonaws.com',
-#         'PORT': '5432'
+#         'HOST': 'mongodb+srv://ieacif:ieacif2021@ieacif.ypwuu.mongodb.net/IEAACIF?retryWrites=true&w=majority',
 #     }
 # }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'acif2021',
-    }
+        'default': {
+            'ENGINE': 'djongo',
+            'NAME': 'ieacif',
+            'ENFORCE_SCHEMA': False,
+            'CLIENT': {
+                'host': 'mongodb+srv://ieacif:ieacif2021@ieacif.ypwuu.mongodb.net/IEACIF?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE'
+            }  
+        }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'acif2021',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
